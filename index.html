@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Juan Pablo Toniolo - SRE</title>
+    <style>
+        .parallax-section {
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <section id="section1" class="section parallax-section"
+        style="background-image: url('https://via.placeholder.com/1920x1080')">
+        <h2>Juan Pablo Toniolo</h2>
+        <img src="https://via.placeholder.com/350x150" alt="Image 1">
+    </section>
+
+    <section id="section2" class="section parallax-section"
+        style="background-image: url('https://via.placeholder.com/1920x1080')">
+        <h2>Section 2</h2>
+        <img src="https://via.placeholder.com/350x150" alt="Image 2">
+    </section>
+
+    <section id="section3" class="section parallax-section"
+        style="background-image: url('https://via.placeholder.com/1920x1080')">
+        <h2>Section 3</h2>
+        <img src="https://via.placeholder.com/350x150" alt="Image 3">
+    </section>
+    <footer></footer>
+    <script type="application/json">
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.parallax-section');
+
+            function handleScroll() {
+                sections.forEach((section) => {
+                    const windowHeight = window.innerHeight;
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionHeight = section.offsetHeight;
+                    const scrollPosition = window.pageYOffset;
+
+                    const parallaxSpeed = 0.5; // Adjust the speed of the parallax effect here
+
+                    const backgroundPosition = (sectionTop - scrollPosition) * parallaxSpeed / sectionHeight;
+
+                    section.style.backgroundPositionY = `${backgroundPosition}px`;
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+
+
+
+</html>
